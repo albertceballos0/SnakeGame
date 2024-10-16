@@ -8,8 +8,9 @@ public class SnakeGame {
     private SnakeFood food;
     private boolean isGameOver;
     private int score;
+    private String playerName;
 
-    public SnakeGame(int width, int height) {
+    public SnakeGame(String playerName, int width, int height) {
     
         this.board = new SnakeBoard(width, height);
         this.player = new SnakePlayer(width / 2, height / 2);
@@ -17,6 +18,8 @@ public class SnakeGame {
         this.isGameOver = false;
         this.score = 0;
         placeFood();
+        this.playerName = playerName;
+
 
     }
 
@@ -66,4 +69,6 @@ public class SnakeGame {
     public SnakeFood getFood() { return food; }
     public boolean isGameOver() { return isGameOver; }
     public int getScore() { return score; }
+    public String getPlayerName() { return playerName; }
+
 }

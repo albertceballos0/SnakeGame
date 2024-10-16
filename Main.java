@@ -1,8 +1,9 @@
-import controllers.SnakeController;
+import views.GameSetUp;
+
 
 public class Main {
     public static void main(String[] args) {
-        SnakeController controller = new SnakeController(30, 30);
-        controller.startGame();
+        GameSetUp setup = new GameSetUp();
+        setup.showSetupDialog();
     }
 }

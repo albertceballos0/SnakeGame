@@ -5,8 +5,7 @@ import models.SnakeGame;
 
 
 import views.SnakeView;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+
 import java.io.Serial;
 import javax.swing.*;
 import java.awt.event.*;
@@ -24,9 +23,9 @@ public class SnakeController extends KeyAdapter {
      * @param width  the width of the game area
      * @param height the height of the game area
      */
-    public SnakeController(int width, int height) {
+    public SnakeController(String playerName, int width, int height) {
 
-        game = new SnakeGame(width, height);
+        game = new SnakeGame(playerName, width, height);
         view = new SnakeView(this, width, height);
         gameTimer = new Timer(200, new ActionListener() {
             @Override

@@ -19,12 +19,14 @@ public class SnakeView extends JFrame {
         this.height = height;
 
         setTitle("Snake Game");
-        setSize(width * cellSize, height * cellSize);
+        // Tamaño fijo de la ventana: ancho y alto basados en las dimensiones del tablero
+        setSize(width * cellSize + 40, height * cellSize + 60); // Añadido para bordes y espacio
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(null); // Centrar la ventana en la pantalla
+        setResizable(false); // Evita el redimensionado
 
         gamePanel = new GamePanel();
-        add(gamePanel);
+        add(gamePanel, BorderLayout.CENTER); // Añadir el panel del juego
 
         addKeyListener(controller);
         setFocusable(true);
@@ -63,7 +65,11 @@ public class SnakeView extends JFrame {
             if (game.isGameOver()) {
                 g.setColor(Color.RED);
                 g.setFont(new Font("Arial", Font.BOLD, 30));
-                g.drawString("Game Over!", width * cellSize / 2 - 70, height * cellSize / 2);
+                String gameOverMessage = "Game Over!";
+                FontMetrics metrics = g.getFontMetrics();
+                int x = (getWidth() - metrics.stringWidth(gameOverMessage)) / 2; // Centrando el mensaje
+                int y = height * cellSize / 2; // Ajustando verticalmente
+                g.drawString(gameOverMessage, x, y);
             }
 
             // Dibujar el borde alrededor del área de juego

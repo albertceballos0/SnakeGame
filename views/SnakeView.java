@@ -1,9 +1,8 @@
 package views;
 
-import javax.swing.*;
-import java.awt.*;
-
 import controllers.SnakeController;
+import java.awt.*;
+import javax.swing.*;
 import models.SnakeGame;
 
 public class SnakeView extends JFrame {
@@ -18,9 +17,10 @@ public class SnakeView extends JFrame {
         this.width = width;
         this.height = height;
 
+
         setTitle("Snake Game");
         // Tamaño fijo de la ventana: ancho y alto basados en las dimensiones del tablero
-        setSize(width * cellSize + 40, height * cellSize + 60); // Añadido para bordes y espacio
+        setSize(width * cellSize, height * cellSize + 30); // Añadido para bordes y espacio
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Centrar la ventana en la pantalla
         setResizable(false); // Evita el redimensionado
@@ -39,8 +39,10 @@ public class SnakeView extends JFrame {
     }
 
     private class GamePanel extends JPanel {
+
         @Override
         protected void paintComponent(Graphics g) {
+
             super.paintComponent(g);
             SnakeGame game = controller.getGame();
 
@@ -50,10 +52,12 @@ public class SnakeView extends JFrame {
             // Dibujar la serpiente
             g.setColor(Color.GREEN);
             for (int[] segment : game.getPlayer().getBody()) {
-                g.fillRect(segment[0] * cellSize, segment[1] * cellSize, cellSize, cellSize);
+                //comprueba si sale fuera del tablero para 
+                if (!(segment[0] >= game.getBoard().getWidth() || segment[1] >= game.getBoard().getHeight() || segment[0] < 0 || segment[1] < 0)) 
+                    g.fillRect(segment[0] * cellSize, segment[1] * cellSize, cellSize, cellSize);
             }
 
-            // Dibujar la comida
+            // Dibujar la comida 
             g.setColor(Color.RED);
             g.fillRect(game.getFood().getX() * cellSize, game.getFood().getY() * cellSize, cellSize, cellSize);
 

@@ -26,7 +26,7 @@ public class GameSetUp {
         gbc.insets = new Insets(10, 10, 10, 10);  // Margen entre componentes
 
         // Etiqueta y campo para el nombre del jugador
-        JLabel nameLabel = new JLabel("Player Name:");
+        JLabel nameLabel = new JLabel("Player Name (3-15 characters):");
         JTextField nameField = new JTextField(15);
 
         // Etiqueta y combo box para el tamaño del tablero
@@ -68,8 +68,8 @@ public class GameSetUp {
             String selectedSize = (String) sizeComboBox.getSelectedItem();
             boardSize = Integer.parseInt(selectedSize.split("x")[0]);
 
-            if (playerName.isEmpty()) {
-                JOptionPane.showMessageDialog(frame, "Please enter a player name.");
+            if (!isValidPlayerName(playerName)) {
+                JOptionPane.showMessageDialog(frame, "Please enter a player name between 3 and 15 characters.");
             } else {
                 frame.dispose();
                 startGame();
@@ -84,5 +84,9 @@ public class GameSetUp {
     private void startGame() {
         SnakeController controller = new SnakeController(playerName, boardSize, boardSize);
         controller.startGame();
+    }
+
+    public boolean isValidPlayerName(String name) {
+        return name != null && name.length() >= 3 && name.length() <= 15;
     }
 }

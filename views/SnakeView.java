@@ -20,7 +20,7 @@ public class SnakeView extends JFrame {
 
         setTitle("Snake Game");
         // Tamaño fijo de la ventana: ancho y alto basados en las dimensiones del tablero
-        setSize(width * cellSize, height * cellSize + 30); // Añadido para bordes y espacio
+        setSize(width * cellSize + 100 , height * cellSize + 100); // Añadido para bordes y espacio
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Centrar la ventana en la pantalla
         setResizable(false); // Evita el redimensionado

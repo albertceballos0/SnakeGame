@@ -8,12 +8,20 @@ public class SnakePlayer {
     private int direction; // 0: up, 1: right, 2: down, 3: left
 
     public SnakePlayer(int x, int y) {
+        // Design by contract
+        if (x < 0 || y < 0) {
+            throw new IllegalArgumentException("Coordenades del SnakePlayer no poden ser negatives");
+        }
         body = new ArrayList<>();
         body.add(new int[]{x, y});
         direction = 1;
     }
 
     public void restart(int x, int y) {
+        // Design by contract
+        if (x < 0 || y < 0) {
+            throw new IllegalArgumentException("Coordenades del SnakePlayer no poden ser negatives");
+        }
         body = new ArrayList<>();
         body.add(new int[]{x, y});
         direction = 1;
@@ -67,6 +75,10 @@ public class SnakePlayer {
     public int getDirection() { return direction; }
     
     public void setDirection(int direction) {
+        // Design by contract
+        if (direction < 0 || direction > 3) {
+            throw new IllegalArgumentException("Direction ha de ser un valor entre 0 i 3");
+        }
         // Check if the new direction is not the opposite of the current direction
         if ((this.direction == 0 && direction != 2) ||
             (this.direction == 1 && direction != 3) ||

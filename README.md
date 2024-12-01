@@ -30,6 +30,10 @@ El proyecto sigue una arquitectura MVC (Modelo-Vista-Controlador), donde:
 - **SnakeController**: Maneja las entradas del teclado para controlar el movimiento de la serpiente y los eventos del juego (inicio, reinicio, salir, etc.).
 - **GameSetUp**: Presenta una ventana para configurar el juego antes de comenzar (nombre del jugador, tamaño del tablero y nivel de dificultad).
 
+### Diagrama de clases
+
+![Diagrama de clases](assets/clases.png)
+
 ## Instrucciones de Uso
 ### 1. Instrucciones para Compilar y Ejecutar
 

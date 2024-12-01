@@ -18,6 +18,10 @@ public final class SnakeGame {
         this.isGameOver = false;
         this.score = 0;
         this.playerName = playerName;
+        // Design by contract
+        if (difficulty < 0 || difficulty > 5) {
+            throw new IllegalArgumentException("Valor erroni a SnakeGame.difficulty");
+        }
         this.difficulty = difficulty;
         setObstacles(difficulty);
     }
@@ -76,6 +80,10 @@ public final class SnakeGame {
     }
 
     public void setObstacles(int numObstacles) {
+        // Design by contract
+        if (numObstacles < 0 || numObstacles > board.getHeight()*board.getWidth() - 1) {
+            throw new IllegalArgumentException("Numero de obstacles no pot ser menor a 0 o major al nombre de tiles");
+        }
         for (int i = 0; i < numObstacles; i++) {
             generateObstacle();
         }
@@ -85,6 +93,7 @@ public final class SnakeGame {
     // Getters and setters
     public SnakeBoard getBoard() { return board; }
     public SnakePlayer getPlayer() { return player; }
+    public int getDifficulty() { return difficulty; }
     public SnakeFood getFood() { return board.getFood(); }
     public List<SnakeObstacle> getObstacles() { return board.getObstacles(); }
     public boolean isGameOver() { return isGameOver; }

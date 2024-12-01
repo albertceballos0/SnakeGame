@@ -1,4 +1,5 @@
 name: Run Tests
+
 on:
   pull_request:
     branches:
@@ -18,6 +19,8 @@ jobs:
           java-version: '11'
           distribution: 'temurin'   # Usamos la distribución Temurin
 
+      - name: Install Maven
+        run: sudo apt-get install maven  # Instalar Maven si no está instalado
+
       - name: Run tests
-        run: |
-          ./mvnw test -Dtest=tests.AllTests
+        run: mvn test -Dtest=tests.AllTests  # Usar Maven directamente

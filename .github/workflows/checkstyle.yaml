@@ -11,13 +11,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      
+
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'temurin'   # Usamos la distribución Temurin
+          distribution: 'temurin'
+
+      - name: Install Maven
+        run: sudo apt-get install maven  # Instalar Maven si no está instalado
 
       - name: Run Checkstyle
-        run: |
-          ./mvnw checkstyle:checkstyle
+        run: mvn checkstyle:checkstyle  # Usar Maven directamente

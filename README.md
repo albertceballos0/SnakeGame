@@ -31,18 +31,39 @@ El proyecto sigue una arquitectura MVC (Modelo-Vista-Controlador), donde:
 - **GameSetUp**: Presenta una ventana para configurar el juego antes de comenzar (nombre del jugador, tamaño del tablero y nivel de dificultad).
 
 ## Instrucciones de Uso
+### Instrucciones para Compilar y Ejecutar
 
-### 1. Ejecutar el Juego
+#### Paso 1: Clonar el repositorio
 
-Para ejecutar el juego, sigue los siguientes pasos:
+Si aún no has clonado el repositorio, usa el siguiente comando:
 
-1. **Compilar el código**:
+```bash
+git clone https://github.com/albertceballos0/SnakeGame.git
+cd SnakeGame
+```
 
-   Si usas Maven o Gradle, puedes compilar el proyecto con el comando correspondiente. Si usas un IDE, simplemente ejecuta el proyecto desde allí.
+#### Paso 2: Compilar el código fuente
 
-2. **Ejecutar el archivo principal**:
-   
-   El juego se inicia a través de la clase `SnakeController`. Puedes hacerlo directamente desde un IDE o a través de la terminal si es un proyecto de consola.
+Para compilar el código, ejecuta el siguiente comando desde la raíz del proyecto:
+
+```bash
+javac -d bin src/main/java/main/Main.java src/main/java/controllers/SnakeController.java src/main/java/models/SnakeGame.java src/main/java/models/SnakeObstacle.java src/main/java/models/SnakeBoard.java src/main/java/models/SnakePlayer.java src/main/java/models/SnakeFood.java src/main/java/views/GameSetUp.java src/main/java/views/SnakeView.java
+```
+
+Esto generará los archivos `.class` en el directorio `bin`.
+
+#### Paso 3: Ejecutar el programa
+
+Una vez compilado, puedes ejecutar el juego con el siguiente comando:
+
+```bash
+java -cp bin main.Main
+```
+
+#### Notas
+
+- Asegúrate de tener instalado el JDK en tu máquina.
+- Si tienes algún problema con las dependencias o la compilación, revisa que las rutas de los archivos fuente sean correctas.
 
 ### 2. Configuración
 
@@ -102,7 +123,7 @@ mvn test
 
 Este proyecto está configurado para usar **GitHub Actions** para la integración continua. Cada vez que se realice un `push` o `pull request` a la rama principal, GitHub Actions ejecutará las pruebas y construirá el proyecto automáticamente.
 
-El archivo de flujo de trabajo (`.github/workflows/tests.yml`) contiene los pasos para instalar Java, ejecutar Maven y probar el código.
+El archivo de flujo de trabajo (`.github/workflows/ci.yml`) contiene los pasos para instalar Java, ejecutar Maven y probar el código.
 
 ## Contribuciones
 
@@ -113,3 +134,9 @@ Si deseas contribuir al proyecto, por favor, crea un **fork** del repositorio, r
 Este proyecto está bajo la **Licencia MIT**.
 
 Aquí tienes el README actualizado con la información precisa sobre los modelos, vistas y controladores según la estructura que has indicado:
+
+
+
+
+
+

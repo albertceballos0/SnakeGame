@@ -31,7 +31,7 @@ El proyecto sigue una arquitectura MVC (Modelo-Vista-Controlador), donde:
 - **GameSetUp**: Presenta una ventana para configurar el juego antes de comenzar (nombre del jugador, tamaño del tablero y nivel de dificultad).
 
 ## Instrucciones de Uso
-### Instrucciones para Compilar y Ejecutar
+### 1. Instrucciones para Compilar y Ejecutar
 
 #### Paso 1: Clonar el repositorio
 

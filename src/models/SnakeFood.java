@@ -1,20 +1,19 @@
-package src.models;
-import java.util.Random;
+package models;
 
 public class SnakeFood {
+    private int x;
+    private int y;
 
-    //Board widht and height
-    private int boardWidth, boardHeight;
-
-    //random para conseeguir nuevas posiciones
-    private Random random;
-
-    //posicion de la comida
-    private int width, height;
-
-
-    private void getRandomPosition() {
-        width = random.nextInt(boardWidth);
-        height =  random.nextInt(boardHeight);
+    public SnakeFood(int x, int y) {
+        // Design by contract
+        if (x < 0 || y < 0) {
+            throw new IllegalArgumentException("Coordenades de la Food no poden ser negatives");
+        }
+        this.x = x;
+        this.y = y;
     }
+
+    // Getters
+    public int getX() { return x; }
+    public int getY() { return y; }
 }

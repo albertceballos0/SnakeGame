@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'adoptopenjdk'   # Se agrega la distribución
+          distribution: 'temurin'   # Usamos la distribución Temurin
 
       - name: Run tests
         run: |

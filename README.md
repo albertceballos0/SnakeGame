@@ -133,7 +133,6 @@ Si deseas contribuir al proyecto, por favor, crea un **fork** del repositorio, r
 
 Este proyecto está bajo la **Licencia MIT**.
 
-Aquí tienes el README actualizado con la información precisa sobre los modelos, vistas y controladores según la estructura que has indicado:
 
 
 

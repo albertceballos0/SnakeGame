@@ -3,7 +3,7 @@ package models;
 import java.util.List;
 import java.util.Random;
 
-public final class SnakeGame {
+public class SnakeGame {
     private final SnakeBoard board;
     private final SnakePlayer player;
     private boolean isGameOver;

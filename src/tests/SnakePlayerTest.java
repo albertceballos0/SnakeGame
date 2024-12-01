@@ -79,6 +79,7 @@ public class SnakePlayerTest {
         snake.move();
         snake.grow();
         snake.move();
+	assertFalse(snake.collidesWithSelf(), "No s'hauria de detectar Self-collision");
         snake.grow();
         snake.move();
         snake.grow();

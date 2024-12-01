@@ -18,7 +18,6 @@ jobs:
           java-version: '11'
           distribution: 'adoptopenjdk'   # Se agrega la distribución
 
-
       - name: Run tests
         run: |
           ./mvnw test -Dtest=tests.AllTests

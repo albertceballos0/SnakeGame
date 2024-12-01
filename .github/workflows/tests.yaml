@@ -23,4 +23,4 @@ jobs:
         run: sudo apt-get install maven  # Instalar Maven si no está instalado
 
       - name: Run tests
-        run: mvn test -Dtest=tests.AllTests  # Usar Maven directamente
+        run: mvn test  # Usar Maven directamente

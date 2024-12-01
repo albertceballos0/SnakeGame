@@ -16,7 +16,8 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-      
+          distribution: 'adoptopenjdk'   # Se agrega la distribución
+
       - name: Run Checkstyle
         run: |
           ./mvnw checkstyle:checkstyle

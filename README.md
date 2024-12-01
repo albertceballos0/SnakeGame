@@ -102,7 +102,7 @@ mvn test
 
 Este proyecto está configurado para usar **GitHub Actions** para la integración continua. Cada vez que se realice un `push` o `pull request` a la rama principal, GitHub Actions ejecutará las pruebas y construirá el proyecto automáticamente.
 
-El archivo de flujo de trabajo (`.github/workflows/ci.yml`) contiene los pasos para instalar Java, ejecutar Maven y probar el código.
+El archivo de flujo de trabajo (`.github/workflows/tests.yml`) contiene los pasos para instalar Java, ejecutar Maven y probar el código.
 
 ## Contribuciones
 

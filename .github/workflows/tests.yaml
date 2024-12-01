@@ -1,6 +1,9 @@
 name: Run Tests
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -17,10 +20,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'temurin'   # Usamos la distribución Temurin
+          distribution: 'temurin'   
 
       - name: Install Maven
-        run: sudo apt-get install maven  # Instalar Maven si no está instalado
+        run: sudo apt-get install maven  
 
       - name: Run tests
-        run: mvn test  # Usar Maven directamente
+        run: mvn test 

@@ -1,6 +1,9 @@
 name: Checkstyle
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -19,7 +22,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Install Maven
-        run: sudo apt-get install maven  # Instalar Maven si no está instalado
+        run: sudo apt-get install maven 
 
       - name: Run Checkstyle
-        run: mvn checkstyle:checkstyle  # Usar Maven directamente
+        run: mvn checkstyle:checkstyle  

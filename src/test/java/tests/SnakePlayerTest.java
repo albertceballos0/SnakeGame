@@ -1,9 +1,11 @@
 package tests;
 
 import models.SnakePlayer;
-import mock_classes.SnakeBoardMock;
 
 import org.junit.jupiter.api.Test;
+
+import mock_classes.SnakeBoardMock;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;

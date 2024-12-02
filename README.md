@@ -78,15 +78,15 @@ Al iniciar el juego, aparecerá una ventana para ingresar el nombre del jugador,
 ### 3. Controles
 
 - **Teclas de flecha (Arriba, Abajo, Izquierda, Derecha)**: Mueven la serpiente en la dirección correspondiente.
-- **Espacio**: Reinicia el juego si la partida ha terminado.
-- **Escape**: Vuelve al menú de configuración.
 - **Ctrl+C**: Cierra el juego.
 
 ![Juego](assets/juego.png)
 
 ### 4. Fin del Juego
 
-Cuando la serpiente choca con los bordes del tablero, su propio cuerpo o un obstáculo, el juego termina. Puedes presionar "Escape" para volver al menú de configuración o "Espacio" para reiniciar el juego.
+Cuando la serpiente choca con los bordes del tablero, su propio cuerpo o un obstáculo, el juego termina. 
+- **Espacio**: Reinicia el juego.
+- **Escape**: Vuelve al menú de configuración.
 
 ![final del juego](assets/final.png)
 

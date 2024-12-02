@@ -73,6 +73,8 @@ java -cp bin main.Main
 
 Al iniciar el juego, aparecerá una ventana para ingresar el nombre del jugador, seleccionar el tamaño del tablero y elegir la dificultad (fácil, media o difícil). Después de configurar todo, podrás comenzar a jugar.
 
+![Inicio del juego](assets/inicio.png)
+
 ### 3. Controles
 
 - **Teclas de flecha (Arriba, Abajo, Izquierda, Derecha)**: Mueven la serpiente en la dirección correspondiente.
@@ -80,9 +82,13 @@ Al iniciar el juego, aparecerá una ventana para ingresar el nombre del jugador,
 - **Escape**: Vuelve al menú de configuración.
 - **Ctrl+C**: Cierra el juego.
 
+![Juego](assets/juego.png)
+
 ### 4. Fin del Juego
 
 Cuando la serpiente choca con los bordes del tablero, su propio cuerpo o un obstáculo, el juego termina. Puedes presionar "Escape" para volver al menú de configuración o "Espacio" para reiniciar el juego.
+
+![final del juego](assets/final.png)
 
 ## Arquitectura del Código
 
